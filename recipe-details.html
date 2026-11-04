@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shakshuka | Recipe Finder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/recipe-details.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <nav class="navbar" aria-label="Main navigation">
+    <a class="brand" href="index.html"><img class="brand-logo" src="images/logo.png" alt="">Recipe Finder</a>
+    <input type="checkbox" id="nav-user" class="nav-toggle-input"><label for="nav-user" class="nav-toggle"><span class="sr-only">Toggle menu</span><span aria-hidden="true">&#9776;</span></label>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html">Browse recipes</a></li>
+        <li><a href="favorites.html">My favorites</a></li>
+        <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+    </ul>
+    <div class="nav-actions"><span class="nav-user">Sara Ahmed<span class="role-tag">User</span></span><a class="btn btn-outline btn-sm" href="index.html">Log out</a></div>
+  </nav>
+</header>
+
+<main id="content">
+  <div class="container page-header">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a> &rsaquo; <a href="recipes.html">Recipes</a> &rsaquo; <span aria-current="page">Shakshuka</span>
+    </nav>
+    <span class="badge badge-main">Main Course</span>
+    <h1 class="detail-title">Shakshuka</h1>
+    <p class="detail-desc">Eggs poached gently in a spiced tomato and pepper sauce. A quick, filling dish that works for breakfast, lunch or dinner.</p>
+    <p class="card-meta">20 min &middot; 2 servings &middot; 6 ingredients</p>
+
+    <div class="detail-actions">
+      <input type="checkbox" id="fav-toggle" class="fav-input">
+      <label for="fav-toggle" class="btn btn-outline fav-btn">
+        <span class="fav-off">&#9825; Add to Favorites</span>
+        <span class="fav-on">&#9733; Added to Favorites</span>
+      </label>
+      <a class="btn btn-ghost" href="recipes.html">&larr; Back to Recipes</a>
+      <p class="alert alert-success fav-msg" role="status">Shakshuka was saved to your favorites. <a href="favorites.html">View My favorites</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="detail-layout">
+      <aside aria-label="Photo and ingredients">
+        <img class="detail-photo" src="images/recipes/shakshuka.jpg" alt="Shakshuka: eggs baked in tomato sauce in a pan">
+        <section class="recipe-sheet" aria-labelledby="ing-title">
+          <h2 id="ing-title" style="font-size:1.4rem">Ingredients</h2>
+          <ul class="ingredient-list">
+            <li><span>Eggs</span><span>4 pieces</span></li>
+            <li><span>Ripe tomatoes, chopped</span><span>500 g</span></li>
+            <li><span>Red bell pepper</span><span>1 piece</span></li>
+            <li><span>Onion</span><span>1 piece</span></li>
+            <li><span>Cumin</span><span>1 tsp</span></li>
+            <li><span>Olive oil</span><span>2 tbsp</span></li>
+          </ul>
+        </section>
+      </aside>
+
+      <article aria-labelledby="steps-title">
+        <h2 id="steps-title">Instructions</h2>
+        <ol class="steps">
+          <li>Heat the olive oil in a wide pan over medium heat.</li>
+          <li>Add the chopped onion and pepper and cook for 5 minutes until soft.</li>
+          <li>Stir in the cumin, then add the tomatoes. Simmer for 10 minutes until the sauce thickens.</li>
+          <li>Make four small wells in the sauce and crack an egg into each one.</li>
+          <li>Cover the pan and cook for 5 minutes, until the whites are set and the yolks are still soft.</li>
+          <li>Serve hot, straight from the pan, with bread.</li>
+        </ol>
+        <p class="muted">Tip: add a pinch of chili flakes if you like it spicy.</p>
+      </article>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><img class="brand-logo" src="images/logo.png" alt=""><strong>Recipe Finder</strong></div>
+        <p>Find dishes by name, ingredient or course, and keep the ones you love in one place.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="recipes.html">Browse recipes</a></li>
+          <li><a href="favorites.html">My favorites</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Account</h3>
+        <ul>
+          <li><a href="login.html">Log in</a></li>
+          <li><a href="signup.html">Sign up</a></li>
+          <li><a href="admin-dashboard.html">Admin area</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; 2026 Recipe Finder &middot; IS231 Web Technology, Cairo University &middot; Phase 1 prototype</p>
+  </div>
+</footer>
+</body>
+</html>

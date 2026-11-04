@@ -1,0 +1,26 @@
+.detail-title { margin: .5rem 0 .6rem; font-size: clamp(2rem, 4.5vw, 3rem); }
+.detail-desc { font-size: 1.12rem; color: var(--ink-soft); }
+
+.detail-photo {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+}
+
+.detail-actions { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; margin-top: 1.2rem; }
+
+.fav-input { position: absolute; opacity: 0; pointer-events: none; }
+.fav-btn .fav-on { display: none; }
+.fav-input:checked + .fav-btn { background: var(--saffron-tint); border-color: var(--saffron); color: #7a5300; }
+.fav-input:checked + .fav-btn .fav-off { display: none; }
+.fav-input:checked + .fav-btn .fav-on { display: inline; }
+.fav-input:focus-visible + .fav-btn { outline: 3px solid var(--saffron); outline-offset: 2px; }
+
+.fav-msg { display: none; flex-basis: 100%; margin: .4rem 0 0; }
+.fav-input:checked ~ .fav-msg { display: block; }
+
+.steps li::marker { font-weight: 800; color: var(--basil-dark); }
+.steps { font-size: 1.08rem; }

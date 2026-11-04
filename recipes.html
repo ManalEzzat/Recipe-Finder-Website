@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Browse recipes | Recipe Finder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/recipe-details.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="images/logo.png" alt="">Recipe Finder
+    </a>
+    <input type="checkbox" id="nav-user" class="nav-toggle-input">
+    <label for="nav-user" class="nav-toggle">
+      <span>&#9776;</span>
+    </label>
+    <ul class="nav-links">
+       <li><a href="index.html">Home</a></li>
+       <li><a href="recipes.html" aria-current="page">Browse recipes</a></li>
+       <li><a href="favorites.html">My favorites</a></li>
+       <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+    </ul>
+    <div class="nav-actions">
+      <span class="nav-user">Sara Ahmed<span class="role-tag">User</span></span>
+      <a class="btn btn-outline btn-sm" href="index.html">Log out</a>
+    </div>
+  </nav>
+</header>
+
+<main id="content">
+
+  <div class="container page-header">
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a> / <span>Browse recipes</span>
+    </nav>
+    <h1>Recipe Catalogue</h1>
+    <p>Discover dishes by recipe name, ingredient, or course. Save your favorites to your account.</p>
+  </div>
+
+  <div class="container">
+
+    <!-- Search & Filters Form -->
+    <section>
+      <form class="filters" action="recipes.html" method="get">
+        <div class="field">
+          <label for="recipe-name">Recipe name</label>
+          <input type="search" id="recipe-name" name="q" placeholder="e.g. Shakshuka, Om Ali...">
+        </div>
+        
+        <div class="field">
+          <label for="recipe-ingredient">Ingredient</label>
+          <input type="text" id="recipe-ingredient" name="ingredient" placeholder="e.g. eggs, rice, tomato...">
+        </div>
+
+        <div class="field">
+          <label for="recipe-course">Course</label>
+          <select id="recipe-course" name="course">
+            <option value="">All courses</option>
+            <option value="Appetizer">Appetizer</option>
+            <option value="Main Course">Main Course</option>
+            <option value="Dessert">Dessert</option>
+          </select>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Filter</button>
+          <a class="btn btn-ghost btn-sm" href="recipes.html">Reset</a>
+        </div>
+      </form>
+    </section>
+
+    <!-- Toolbar & Results Counter -->
+    <div class="toolbar">
+      <h2>6 recipes available</h2>
+      <p class="muted">Showing sample catalogue items</p>
+    </div>
+
+    <!-- Recipe Cards Grid -->
+    <section>
+      <div class="grid grid-3">
+
+        <!-- Recipe Item 1 -->
+        <article class="card">
+          <div class="card-media">
+            <img src="images/recipes/shakshuka.jpg" alt="Shakshuka in a skillet">
+          </div>
+          <div class="card-body">
+            <span class="badge badge-main">Main Course</span>
+            <h3>Shakshuka</h3>
+            <p class="card-meta"><strong>Ingredients:</strong> Eggs, Tomato sauce, Cumin, Onion, Bell pepper</p>
+            <p class="muted">Poached eggs in a hearty, spiced tomato and pepper sauce served warm with fresh bread.</p>
+            <div class="card-actions">
+              <a class="btn btn-outline btn-sm" href="recipe-details.html">View details</a>
+              <div>
+                <input type="checkbox" id="fav-1" class="fav-input">
+                <label for="fav-1" class="btn btn-outline btn-sm fav-btn">
+                  <span class="fav-off">❤️ Favorite</span>
+                  <span class="fav-on">❤️ Saved</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Recipe Item 2 -->
+        <article class="card">
+          <div class="card-media">
+            <img src="images/recipes/vine-leaves.jpg" alt="Stuffed vine leaves with lemon">
+          </div>
+          <div class="card-body">
+            <span class="badge">Appetizer</span>
+            <h3>Stuffed vine leaves</h3>
+            <p class="card-meta"><strong>Ingredients:</strong> Grape leaves, Rice, Herbs, Olive oil, Lemon</p>
+            <p class="muted">Tender grape leaves rolled with spiced rice and herbs, drizzled with fresh lemon juice.</p>
+            <div class="card-actions">
+              <a class="btn btn-outline btn-sm" href="recipe-details.html">View details</a>
+              <div>
+                <input type="checkbox" id="fav-2" class="fav-input">
+                <label for="fav-2" class="btn btn-outline btn-sm fav-btn">
+                  <span class="fav-off">❤️ Favorite</span>
+                  <span class="fav-on">❤️ Saved</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Recipe Item 3 -->
+        <article class="card">
+          <div class="card-media">
+            <img src="images/recipes/om-ali.jpg" alt="Baked Om Ali dessert">
+          </div>
+          <div class="card-body">
+            <span class="badge badge-dessert">Dessert</span>
+            <h3>Om Ali</h3>
+            <p class="card-meta"><strong>Ingredients:</strong> Puff pastry, Milk, Cream, Mixed nuts, Raisins</p>
+            <p class="muted">Traditional Egyptian bread pudding baked with milk, cream, and crunchy toasted nuts.</p>
+            <div class="card-actions">
+              <a class="btn btn-outline btn-sm" href="recipe-details.html">View details</a>
+              <div>
+                <input type="checkbox" id="fav-3" class="fav-input">
+                <label for="fav-3" class="btn btn-outline btn-sm fav-btn">
+                  <span class="fav-off">❤️ Favorite</span>
+                  <span class="fav-on">❤️ Saved</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Recipe Item 4 -->
+        <article class="card">
+          <div class="card-media">
+            <img src="images/recipes/tabbouleh.jpg" alt="Tabbouleh salad">
+          </div>
+          <div class="card-body">
+            <span class="badge">Appetizer</span>
+            <h3>Tabbouleh salad</h3>
+            <p class="card-meta"><strong>Ingredients:</strong> Parsley, Bulgur wheat, Tomatoes, Mint, Olive oil</p>
+            <p class="muted">Refreshing Mediterranean salad finely chopped with herbs, lemon juice, and extra virgin olive oil.</p>
+            <div class="card-actions">
+              <a class="btn btn-outline btn-sm" href="recipe-details.html">View details</a>
+              <div>
+                <input type="checkbox" id="fav-4" class="fav-input">
+                <label for="fav-4" class="btn btn-outline btn-sm fav-btn">
+                  <span class="fav-off">❤️ Favorite</span>
+                  <span class="fav-on">❤️ Saved</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Recipe Item 5 -->
+        <article class="card">
+          <div class="card-media">
+            <img src="images/recipes/koshary.jpg" alt="Koshary">
+          </div>
+          <div class="card-body">
+            <span class="badge badge-main">Main Course</span>
+            <h3>Koshary</h3>
+            <p class="card-meta"><strong>Ingredients:</strong> Rice, Macaroni, Lentils, Chickpeas, Crispy onions, Spicy tomato sauce</p>
+            <p class="muted">Egypt's iconic street food layered with grains, legumes, garlic vinegar, and tangy sauce.</p>
+            <div class="card-actions">
+              <a class="btn btn-outline btn-sm" href="recipe-details.html">View details</a>
+              <div>
+                <input type="checkbox" id="fav-5" class="fav-input">
+                <label for="fav-5" class="btn btn-outline btn-sm fav-btn">
+                  <span class="fav-off">❤️ Favorite</span>
+                  <span class="fav-on">❤️ Saved</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Recipe Item 6 -->
+        <article class="card">
+          <div class="card-media">
+            <img src="images/recipes/basbousa.jpg" alt="Basbousa">
+          </div>
+          <div class="card-body">
+            <span class="badge badge-dessert">Dessert</span>
+            <h3>Basbousa</h3>
+            <p class="card-meta"><strong>Ingredients:</strong> Semolina, Yogurt, Butter, Sugar syrup, Almonds</p>
+            <p class="muted">Sweet semolina cake soaked in aromatic sugar syrup and topped with blanched almonds.</p>
+            <div class="card-actions">
+              <a class="btn btn-outline btn-sm" href="recipe-details.html">View details</a>
+              <div>
+                <input type="checkbox" id="fav-6" class="fav-input">
+                <label for="fav-6" class="btn btn-outline btn-sm fav-btn">
+                  <span class="fav-off">❤️ Favorite</span>
+                  <span class="fav-on">❤️ Saved</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Empty State Component -->
+    <div class="empty-state" style="display: none;">
+      <span class="icon">🔍</span>
+      <h3>No recipes match your search criteria</h3>
+      <p>Try searching for a different ingredient, recipe name, or reset your filter settings.</p>
+      <div>
+        <a class="btn btn-outline btn-sm" href="recipes.html">Clear all filters</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img class="brand-logo" src="images/logo.png" alt="">
+          <strong>Recipe Finder</strong>
+        </div>
+        <p>Find dishes by name, ingredient or course, and keep the ones you love in one place.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="recipes.html">Browse recipes</a></li>
+          <li><a href="favorites.html">My favorites</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Account</h3>
+        <ul>
+          <li><a href="login.html">Log in</a></li>
+          <li><a href="signup.html">Sign up</a></li>
+          <li><a href="admin-dashboard.html">Admin area</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; 2026 Recipe Finder &middot; IS231 Web Technology, Cairo University &middot; Phase 1 prototype</p>
+  </div>
+</footer>
+</body>
+</html>
+

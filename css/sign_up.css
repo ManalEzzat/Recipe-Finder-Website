@@ -1,0 +1,108 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "DM Sans", "Segoe UI", Arial, sans-serif;
+  color: #2b2b2b;
+  background: #fffdf8;
+}
+
+.auth-page { display: flex; min-height: 100vh; }
+
+/* ===== الجزء الشمال ===== */
+.left {
+  width: 45%;
+  padding: 40px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;   /* فوق / نص / تحت */
+  color: #fff;
+  background-image:
+    linear-gradient(rgba(15, 50, 35, 0.55), rgba(15, 50, 35, 0.75)),
+    url("../images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.brand {
+  display: flex;                    /* اللوجو جنب الاسم */
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #fff;
+}
+.brand-logo { width: 55px; height: 55px; object-fit: contain; }
+.brand-name { font-family: Georgia, serif; font-size: 1.6rem; font-weight: 700; }
+
+.hero-text { max-width: 520px; }
+.eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #f0a883;
+  margin-bottom: 16px;
+}
+.hero-text h1 {
+  font-family: Georgia, serif;
+  font-size: 3rem;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.hero-desc { font-size: 1.05rem; line-height: 1.6; }
+.credit { font-size: 0.8rem; opacity: 0.8; }
+
+/* ===== الجزء اليمين ===== */
+.right {
+  width: 55%;
+  padding: 24px 48px;
+  display: flex;
+  flex-direction: column;
+}
+.back-link {
+  align-self: flex-end;
+  color: #1f4d3a;
+  font-weight: 600;
+  text-decoration: none;
+}
+.form-wrap {
+  width: 100%;
+  max-width: 550px;
+  margin: auto;
+}
+.eyebrow.accent { color: #c8683f; }
+.form-wrap h2 {
+  font-family: Georgia, serif;
+  font-size: 2.6rem;
+  color: #1f4d3a;
+  margin-bottom: 8px;
+}
+.subtitle { color: #5f6b64; margin-bottom: 28px; }
+
+.field { margin-bottom: 18px; }
+.field label { display: block; font-weight: 600; margin-bottom: 8px; }
+.req { color: #c8683f; }
+.field input {
+  width: 100%;
+  padding: 16px 18px;
+  border: 1px solid #dcd8cc;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: #fff;
+}
+.field input:focus { outline: 2px solid #1f4d3a; }
+
+.btn-primary {
+  width: 100%;
+  padding: 16px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 10px;
+  background: #1f4d3a;
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn-primary:hover { background: #163a2b; }
+
+.switch { text-align: center; margin-top: 18px; }
+.switch a { color: #1f4d3a; font-weight: 700; }

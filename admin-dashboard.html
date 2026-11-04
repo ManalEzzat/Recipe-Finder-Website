@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Dashboard | Recipe Finder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/recipe-details.css">
+    <link rel="stylesheet" href="css/admin-dashboard.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="navbar">
+            <a class="brand" href="index.html">
+                <img class="brand-logo" src="images/logo.png" alt="">
+                Recipe Finder
+            </a>
+            <input type="checkbox" id="nav-admin" class="nav-toggle-input">
+            <label for="nav-admin" class="nav-toggle">
+                <span>&#9776;</span>
+            </label>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="recipes.html">Browse recipes</a></li>
+                <li><a href="favorites.html">My favorites</a></li>
+                <li>
+                    <a href="admin-dashboard.html" aria-current="page">
+                        Admin Dashboard
+                    </a>
+                </li>
+            </ul>
+            <div class="nav-actions">
+                <span class="nav-user">
+                    Sara Ahmed
+                    <span class="role-tag">Admin</span>
+                </span>
+                <a class="btn btn-outline btn-sm" href="index.html">
+                    Log out
+                </a>
+            </div>
+        </nav>
+    </header>
+    <main id="content">
+        <div class="container page-header">
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a> /
+                <span>Admin Dashboard</span>
+            </nav>
+            <h1>Admin Dashboard</h1>
+            <p>
+                Manage recipes, view catalogue information,
+                and keep your recipe collection organized.
+            </p>
+        </div>
+        <div class="container">
+            <section class="dashboard-summary">
+                <h2>Overview</h2>
+                <div class="summary-grid">
+                    <article class="summary-card">
+                        <span class="summary-icon">📚</span>
+                        <h3>Total Recipes</h3>
+                        <p class="summary-number" id="total-recipes">6</p>
+                    </article>
+                    <article class="summary-card">
+                        <span class="summary-icon">🥗</span>
+                        <h3>Appetizers</h3>
+                        <p class="summary-number" id="appetizer-count">2</p>
+                    </article>
+                    <article class="summary-card">
+                        <span class="summary-icon">🍲</span>
+                        <h3>Main Courses</h3>
+                        <p class="summary-number" id="main-count">2</p>
+                    </article>
+                    <article class="summary-card">
+                        <span class="summary-icon">🍰</span>
+                        <h3>Desserts</h3>
+                        <p class="summary-number" id="dessert-count">2</p>
+                    </article>
+                </div>
+            </section>
+            <section class="recipe-management">
+                <div class="management-heading">
+                    <div>
+                        <h2>Recipe Management</h2>
+                        <p class="muted">
+                            View, add, edit, and delete recipes.
+                        </p>
+                    </div>
+                   <a href="addRecipe.html" class="btn btn-primary">
+                    + Add New Recipe
+                    </a>
+                </div>
+                <section class="recipe-form-section"
+                         id="recipe-form-section"
+                         style="display: none;">
+                    <h3 id="form-title">Add New Recipe</h3>
+                    <form id="recipe-form">
+                        <div class="admin-form-grid">
+                            <div class="field">
+                                <label for="recipe-name">
+                                    Recipe Name
+                                </label>
+                                <input type="text"
+                                       id="recipe-name"
+                                       placeholder="Enter recipe name"
+                                       required>
+                            </div>
+                            <div class="field">
+                                <label for="recipe-course">
+                                    Course
+                                </label>
+                                <select id="recipe-course" required>
+                                    <option value="">
+                                        Select course
+                                    </option>
+                                    <option value="Appetizer">
+                                        Appetizer
+                                    </option>
+                                    <option value="Main Course">
+                                        Main Course
+                                    </option>
+                                    <option value="Dessert">
+                                        Dessert
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button class="btn btn-primary" type="submit">
+                                Save Recipe
+                            </button>
+                            <button class="btn btn-outline"
+                                    type="button"
+                                    id="cancel-form-btn">
+                                Cancel
+                            </button>
+                        </div>
+                    </form>
+                </section>
+                <div class="table-container">
+                    <table class="recipes-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Course</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recipes-table-body">
+                            <tr>
+                                <td>1</td>
+                                <td>Shakshuka</td>
+                                <td><span class="course-tag main-tag">Main Course</span></td>
+                                <td>
+                                    <div class="table-actions">
+                                        <button class="edit-btn" type="button">Edit</button>
+                                        <button class="delete-btn" type="button">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>2</td>
+                                <td>Stuffed Vine Leaves</td>
+                                <td><span class="course-tag appetizer-tag">Appetizer</span></td>
+                                <td>
+                                    <div class="table-actions">
+                                        <button class="edit-btn" type="button">Edit</button>
+                                        <button class="delete-btn" type="button">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>3</td>
+                                <td>Om Ali</td>
+                                <td><span class="course-tag dessert-tag">Dessert</span></td>
+                                <td>
+                                    <div class="table-actions">
+                                        <button class="edit-btn" type="button">Edit</button>
+                                        <button class="delete-btn" type="button">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>4</td>
+                                <td>Tabbouleh Salad</td>
+                                <td><span class="course-tag appetizer-tag">Appetizer</span></td>
+                                <td>
+                                    <div class="table-actions">
+                                        <button class="edit-btn" type="button">Edit</button>
+                                        <button class="delete-btn" type="button">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Koshary</td>
+                                <td><span class="course-tag main-tag">Main Course</span></td>
+                                <td>
+                                    <div class="table-actions">
+                                        <button class="edit-btn" type="button">Edit</button>
+                                        <button class="delete-btn" type="button">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Basbousa</td>
+                                <td><span class="course-tag dessert-tag">Dessert</span></td>
+                                <td>
+                                    <div class="table-actions">
+                                        <button class="edit-btn" type="button">Edit</button>
+                                        <button class="delete-btn" type="button">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <img class="brand-logo" src="images/logo.png" alt="">
+                        <strong>Recipe Finder</strong>
+                    </div>
+                    <p>
+                        Find dishes by name, ingredient or course,
+                        and keep the ones you love in one place.
+                    </p>
+                </div>
+                <div>
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="recipes.html">Browse recipes</a></li>
+                        <li><a href="favorites.html">My favorites</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Account</h3>
+                    <ul>
+                        <li><a href="login.html">Log in</a></li>
+                        <li><a href="signup.html">Sign up</a></li>
+                        <li><a href="admin-dashboard.html">Admin area</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="footer-bottom">
+                &copy; 2026 Recipe Finder &middot;
+                IS231 Web Technology, Cairo University &middot;
+                Phase 1 prototype
+            </p>
+        </div>
+    </footer>
+    
+</body>
+</html>

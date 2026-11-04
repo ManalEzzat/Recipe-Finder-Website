@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Management - Add / Edit Recipe</title>
+  
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <div class="page-header">
+      <div class="page-title">
+        <h1>Recipe Management</h1>
+        <p>View, add, edit, and delete recipes.</p>
+      </div>
+      <button type="button" class="btn-add-top">+ Add New Recipe</button>
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-card">
+      <h2 id="formTitle">Add New Recipe</h2>
+
+      <form action="#" method="POST" enctype="multipart/form-data">
+        <!-- Basic Info Section -->
+        <div class="form-section-title">Basic Information</div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="recipeName">Recipe Name <span class="required">*</span></label>
+            <input type="text" id="recipeName" name="recipeName" placeholder="Enter recipe name" required>
+          </div>
+          <div class="form-group">
+            <label for="courseSelect">Course <span class="required">*</span></label>
+            <select id="courseSelect" name="courseSelect" required>
+              <option value="" disabled selected>Select course</option>
+              <option value="Main Course">Main Course</option>
+              <option value="Appetizer">Appetizer</option>
+              <option value="Dessert">Dessert</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Ingredients Section -->
+        <div class="form-section-title">Ingredients</div>
+        <div class="form-group">
+          <div id="ingredientsContainer">
+            <div class="ingredient-row">
+              <input type="text" name="ingredientName[]" class="ing-name" placeholder="Ingredient name (e.g., Rice)" style="flex: 2;" required>
+              <input type="text" name="ingredientQty[]" class="ing-qty" placeholder="Quantity (e.g., 2 cups)" style="flex: 1;" required>
+              <button type="button" class="btn-remove-ing">X</button>
+            </div>
+          </div>
+          <div>
+            <button type="button" class="btn-add-ing">+ Add Another Ingredient</button>
+          </div>
+        </div>
+
+        <!-- Instructions Section -->
+        <div class="form-section-title">Preparation Instructions</div>
+        <div class="form-group">
+          <label for="instructions">Instructions <span class="required">*</span></label>
+          <textarea id="instructions" name="instructions" placeholder="Enter step-by-step cooking instructions..." required></textarea>
+        </div>
+
+        <!-- Image Upload Section -->
+        <div class="form-section-title">Recipe Image</div>
+        <div class="form-group">
+          <input type="file" id="recipeImage" name="recipeImage" accept="image/*">
+        </div>
+
+        <!-- Actions -->
+        <div class="form-actions">
+          <button type="submit" class="btn-save">Save Recipe</button>
+          <button type="reset" class="btn-cancel">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

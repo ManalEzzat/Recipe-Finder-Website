@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home | Recipe Finder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <nav class="navbar" aria-label="Main navigation">
+    <a class="brand" href="index.html"><img class="brand-logo" src="images/logo.png" alt="">Recipe Finder</a>
+    <input type="checkbox" id="nav-main" class="nav-toggle-input"><label for="nav-main" class="nav-toggle"><span class="sr-only">Toggle menu</span><span aria-hidden="true">&#9776;</span></label>
+    <ul class="nav-links">
+       <li><a href="index.html" aria-current="page">Home</a></li>
+       <li><a href="recipes.html">Browse recipes</a></li>
+       <li><a href="favorites.html">My favorites</a></li>
+       <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+    </ul>
+    <div class="nav-actions"><a class="btn btn-ghost btn-sm" href="login.html">Log in</a><a class="btn btn-primary btn-sm" href="signup.html">Sign up</a></div>
+  </nav>
+</header>
+
+<main id="content">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="kicker">Kitchen-first recipes</p>
+        <h1>Cook with what you already have.</h1>
+        <p class="hero-lead">Search hundreds of recipes by name, ingredient or course. Save your favorites and come back to them any time.</p>
+        <form class="hero-search" action="recipes.html" method="get" role="search">
+          <div class="field">
+            <label for="hero-ingredient">Ingredient</label>
+            <input type="search" id="hero-ingredient" name="ingredient" placeholder="e.g. eggs, rice, tomato">
+          </div>
+          <div class="field">
+            <label for="hero-course">Course</label>
+            <select id="hero-course" name="course">
+              <option value="">Any course</option>
+              <option>Appetizer</option>
+              <option>Main Course</option>
+              <option>Dessert</option>
+            </select>
+          </div>
+          <button class="btn btn-accent" type="submit">Find recipes</button>
+        </form>
+        <p class="hero-note">
+          <span>No account needed to browse</span>
+          <span>Favorites after you log in</span>
+        </p>
+      </div>
+      <div class="hero-photo">
+        <img src="images/hero.jpg" alt="Eggs, tomatoes, herbs and olive oil on a kitchen counter">
+        <aside class="recipe-sheet" aria-label="Sample recipe">
+          <span class="badge badge-main">Main Course</span>
+          <h2 style="margin:.4rem 0 .2rem">Shakshuka</h2>
+          <p class="card-meta" style="margin:0">20 min · 2 servings · eggs, tomato, cumin</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="courses-title">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="courses-title">Browse by course</h2>
+        <p class="muted" style="margin:0">Start with the part of the meal you want to cook tonight.</p>
+      </div>
+      <div class="grid grid-3">
+        <a class="course-tile tone-appetizer" href="recipes.html?course=Appetizer"><span class="emoji" aria-hidden="true">&#129367;</span><h3>Appetizer</h3><p class="muted" style="margin:0">Small plates to start the meal.</p></a>
+        <a class="course-tile tone-main" href="recipes.html?course=Main+Course"><span class="emoji" aria-hidden="true">&#127858;</span><h3>Main Course</h3><p class="muted" style="margin:0">Hearty dishes for lunch and dinner.</p></a>
+        <a class="course-tile tone-dessert" href="recipes.html?course=Dessert"><span class="emoji" aria-hidden="true">&#127856;</span><h3>Dessert</h3><p class="muted" style="margin:0">Sweet finishes and baked treats.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="popular-title">
+    <div class="container">
+      <div class="toolbar section-head">
+        <h2 id="popular-title" style="margin:0">Popular recipes</h2>
+        <a class="btn btn-outline btn-sm" href="recipes.html">See all recipes</a>
+      </div>
+      <div class="grid grid-3">
+        <a class="card card-link" href="recipe-details.html">
+          <div class="card-media"><img src="images/recipes/shakshuka.jpg" alt=""></div>
+          <div class="card-body">
+            <span class="badge badge-main">Main Course</span>
+            <h3>Shakshuka</h3>
+            <p class="card-meta">6 ingredients · 20 min</p>
+          </div>
+        </a>
+        <a class="card card-link" href="recipe-details.html">
+          <div class="card-media"><img src="images/recipes/vine-leaves.jpg" alt=""></div>
+          <div class="card-body">
+            <span class="badge">Appetizer</span>
+            <h3>Stuffed vine leaves</h3>
+            <p class="card-meta">5 ingredients · 45 min</p>
+          </div>
+        </a>
+        <a class="card card-link" href="recipe-details.html">
+          <div class="card-media"><img src="images/recipes/om-ali.jpg" alt=""></div>
+          <div class="card-body">
+            <span class="badge badge-dessert">Dessert</span>
+            <h3>Om Ali</h3>
+            <p class="card-meta">7 ingredients · 30 min</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="how-title">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="how-title">How it works</h2>
+        <p class="muted" style="margin:0">Three short steps from a leftover ingredient to a saved favorite.</p>
+      </div>
+      <ol class="steps-flow">
+        <li><h3>Search</h3><p>Type a dish name or the ingredients in your kitchen, then pick a course.</p></li>
+        <li><h3>Read the recipe</h3><p>Check the ingredient list and follow clear, step-by-step instructions.</p></li>
+        <li><h3>Save it</h3><p>Log in and add recipes to your favorites so you can find them fast.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2>Keep the recipes you love</h2>
+          <p>Create a free account to build your favorites list.</p>
+        </div>
+        <div class="toolbar" style="margin:0">
+          <a class="btn btn-accent" href="signup.html">Create an account</a>
+          <a class="btn btn-outline" href="login.html">Log in</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><img class="brand-logo" src="images/logo.png" alt=""><strong>Recipe Finder</strong></div>
+        <p>Find dishes by name, ingredient or course, and keep the ones you love in one place.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="recipes.html">Browse recipes</a></li>
+          <li><a href="favorites.html">My favorites</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Account</h3>
+        <ul>
+          <li><a href="login.html">Log in</a></li>
+          <li><a href="signup.html">Sign up</a></li>
+          <li><a href="admin-dashboard.html">Admin area</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; 2026 Recipe Finder &middot; IS231 Web Technology, Cairo University &middot; Phase 1 prototype</p>
+  </div>
+</footer>
+</body>
+</html>
+
+
